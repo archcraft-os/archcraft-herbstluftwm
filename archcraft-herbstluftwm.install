@@ -1,0 +1,20 @@
+post_install() {
+	local _user=`echo ${SUDO_USER:-$(whoami)}`
+	local _gid=`echo ${SUDO_GID}`
+	local _group=`cat /etc/group | grep ${_gid} | cut -d: -f1 | head -1`
+	local _dir="/home/${_user}/.config"
+	
+	if [[ ! -d "${_dir}/herbstluftwm" ]]; then
+		echo -e "\n[*] Copying herbstluftwm config files into ${_dir}..."
+		mkdir -p ${_dir}/herbstluftwm
+		cp -rf /etc/skel/.config/herbstluftwm/* ${_dir}/herbstluftwm/
+		chown -R ${_user}:${_group} ${_dir}/herbstluftwm
+		if [[ -d "${_dir}/herbstluftwm" ]]; then
+			echo -e "[*] Done!\n"
+		else
+			echo -e "[*] Failed!\n"
+		fi
+	else
+		echo -e "\n[*] Configurations for herbstluftwm already exist in your config dir.\n Please copy the config files manually from '/etc/skel/.config/herbstluftwm' before you login into herbstluftwm.\n"
+	fi
+}
