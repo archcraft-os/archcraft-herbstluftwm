@@ -28,6 +28,9 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 # Set/Restore wallpaper
 hsetroot -solid "#BDBAB5"
 
+# enable num lock
+numlockx &
+
 # Lauch notification daemon
 ~/.config/herbstluftwm/bin/herbdunst.sh
 
