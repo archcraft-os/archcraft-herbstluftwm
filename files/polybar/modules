@@ -626,8 +626,8 @@ format-disconnected-foreground = ${color.BGA}
 format-disconnected-background = ${color.BG}
 format-disconnected-padding = 1
 
-label-connected = "%{A1:networkmanager_dmenu &:}%downspeed%, %upspeed%%{A}"
-label-disconnected = "%{A1:networkmanager_dmenu &:}Offline%{A}"
+label-connected = "%{A1:~/.config/herbstluftwm/rofi/bin/network_menu &:}%downspeed%, %upspeed%%{A}"
+label-disconnected = "%{A1:~/.config/herbstluftwm/rofi/bin/network_menu &:}Offline%{A}"
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -694,12 +694,12 @@ format-disconnected-padding = 1
 ;   %linkspeed% [wired]
 ; Default: %ifname% %local_ip%
 ;label-connected = "%essid%  %downspeed%"
-label-connected = "%{A1:networkmanager_dmenu &:}%downspeed%, %upspeed%%{A}"
+label-connected = "%{A1:~/.config/herbstluftwm/rofi/bin/network_menu &:}%downspeed%, %upspeed%%{A}"
 
 ; Available tokens:
 ;   %ifname%    [wireless+wired]
 ; Default: (none)
-label-disconnected = "%{A1:networkmanager_dmenu &:}Offline%{A}"
+label-disconnected = "%{A1:~/.config/herbstluftwm/rofi/bin/network_menu &:}Offline%{A}"
 
 ; Available tokens:
 ;   %ifname%    [wireless+wired]
