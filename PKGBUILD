@@ -2,22 +2,19 @@
 
 pkgname=archcraft-herbstluftwm
 pkgver=1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="herbstluftwm Configurations for Archcraft"
 url="https://github.com/archcraft-os/archcraft-herbstluftwm"
 arch=('any')
 license=('GPL3')
 makedepends=('git')
 depends=('herbstluftwm' 'hsetroot'
-		'archcraft-skeleton'
 		'alacritty' 'thunar' 'geany'
 		'rofi' 'polybar' 'dunst'
 		'mpd' 'mpc'
 		'maim' 'xclip' 'viewnior'
 		'ksuperkey' 
 		'betterlockscreen'
-		'picom-ibhagwan-git' 
-		'xfce-polkit' 
 		'xfce4-power-manager' 
 		'xorg-xsetroot'
 )

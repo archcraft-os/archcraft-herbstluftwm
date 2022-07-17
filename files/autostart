@@ -28,8 +28,8 @@ Alt=Mod1   # Use alt as another modifier
 # terminals
 TERMINAL="$HOME/.config/herbstluftwm/bin/herbterm.sh"
 hc keybind $Mod-Return spawn "$TERMINAL"
-hc keybind $Mod-Shift-Return spawn "$TERMINAL" -f
-hc keybind $Mod-t spawn "$TERMINAL" -s
+hc keybind $Mod-Shift-Return spawn "$TERMINAL" --float
+hc keybind $Mod-t spawn "$TERMINAL" --full
 
 # applications
 FILE_MANAGER='thunar'
@@ -54,6 +54,7 @@ hc keybind XF86MonBrightnessDown 	spawn "brightness" "--dec"
 hc keybind XF86AudioRaiseVolume 	spawn "volume" "--inc"
 hc keybind XF86AudioLowerVolume 	spawn "volume" "--dec"
 hc keybind XF86AudioMute 			spawn "volume" "--toggle"
+hc keybind XF86AudioMicMute 		spawn "volume" "--toggle-mic"
 hc keybind XF86AudioNext 			spawn "mpc next"
 hc keybind XF86AudioPrev 			spawn "mpc prev"
 hc keybind XF86AudioPlay 			spawn "mpc toggle"
