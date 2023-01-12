@@ -1,8 +1,8 @@
 # Maintainer: Aditya Shakya <adi1090x@gmail.com>
 
 pkgname=archcraft-herbstluftwm
-pkgver=1.0
-pkgrel=4
+pkgver=2.0
+pkgrel=0
 pkgdesc="herbstluftwm Configurations for Archcraft"
 url="https://github.com/archcraft-os/archcraft-herbstluftwm"
 arch=('any')
@@ -17,6 +17,8 @@ depends=('herbstluftwm' 'hsetroot'
 		'betterlockscreen'
 		'xfce4-power-manager' 
 		'xorg-xsetroot'
+		'wmname'
+		'pulsemixer' 'light' 'xcolor'
 )
 conflicts=()
 provides=("${pkgname}")

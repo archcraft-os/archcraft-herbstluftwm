@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
-## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
+##
 ## herbstluftwm config for Archcraft
 
 ## Configurations --------------------------------------------#
@@ -49,26 +49,26 @@ hc keybind $Mod-r spawn ~/.config/herbstluftwm/rofi/bin/asroot
 hc keybind $Mod-w spawn ~/.config/herbstluftwm/rofi/bin/windows
 
 # function keys
-hc keybind XF86MonBrightnessUp 		spawn "brightness" "--inc"
-hc keybind XF86MonBrightnessDown 	spawn "brightness" "--dec"
-hc keybind XF86AudioRaiseVolume 	spawn "volume" "--inc"
-hc keybind XF86AudioLowerVolume 	spawn "volume" "--dec"
-hc keybind XF86AudioMute 			spawn "volume" "--toggle"
-hc keybind XF86AudioMicMute 		spawn "volume" "--toggle-mic"
+hc keybind XF86MonBrightnessUp 		spawn "$HOME/.config/herbstluftwm/bin/herbbrightness.sh" "--inc"
+hc keybind XF86MonBrightnessDown 	spawn "$HOME/.config/herbstluftwm/bin/herbbrightness.sh" "--dec"
+hc keybind XF86AudioRaiseVolume 	spawn "$HOME/.config/herbstluftwm/bin/herbvolume.sh" "--inc"
+hc keybind XF86AudioLowerVolume 	spawn "$HOME/.config/herbstluftwm/bin/herbvolume.sh" "--dec"
+hc keybind XF86AudioMute 			spawn "$HOME/.config/herbstluftwm/bin/herbvolume.sh" "--toggle"
+hc keybind XF86AudioMicMute 		spawn "$HOME/.config/herbstluftwm/bin/herbvolume.sh" "--toggle-mic"
 hc keybind XF86AudioNext 			spawn "mpc next"
 hc keybind XF86AudioPrev 			spawn "mpc prev"
 hc keybind XF86AudioPlay 			spawn "mpc toggle"
 hc keybind XF86AudioStop 			spawn "mpc stop"
 
 # screenshots
-hc keybind Print 					spawn "takeshot" "--now"
-hc keybind $Mod-Print 				spawn "takeshot" "--in5"
-hc keybind Shift-Print 				spawn "takeshot" "--in10"
-hc keybind Control-Print 			spawn "takeshot" "--win"
-hc keybind $Mod-Control-Print 		spawn "takeshot" "--area"
+hc keybind Print 					spawn "$HOME/.config/herbstluftwm/bin/herbscreenshot.sh" "--now"
+hc keybind $Alt-Print 				spawn "$HOME/.config/herbstluftwm/bin/herbscreenshot.sh" "--in5"
+hc keybind Shift-Print 				spawn "$HOME/.config/herbstluftwm/bin/herbscreenshot.sh" "--in10"
+hc keybind Control-Print 			spawn "$HOME/.config/herbstluftwm/bin/herbscreenshot.sh" "--win"
+hc keybind $Mod-Print 				spawn "$HOME/.config/herbstluftwm/bin/herbscreenshot.sh" "--area"
 
 # misc
-hc keybind $Mod-p 					spawn "color-gpick"
+hc keybind $Mod-p 					spawn "$HOME/.config/herbstluftwm/bin/herbcolorpicker.sh"
 
 # window manager
 hc keybind $Mod-Shift-q quit
@@ -181,7 +181,7 @@ hc rule class~'(alacritty-float)' focus=on floating=on
 hc rule class~'(Pcmanfm|Onboard|Yad)' focus=on floating=on
 hc rule class~'(Lxappearance|Nitrogen)' focus=on floating=on
 hc rule class~'(Pavucontrol|Xfce4-power-manager-settings|Nm-connection-editor)' focus=on floating=on
-hc rule class~'(feh|Viewnior|Gpicview|Gimp|MPlayer)' focus=on floating=on
+hc rule class~'(feh|Viewnior|Gpicview|Gimp|MPlayer|Music)' focus=on floating=on
 hc rule class~'(Kvantum Manager|qt5ct)' focus=on floating=on
 hc rule class~'(VirtualBox Manager|qemu|Qemu-system-x86_64)' focus=on floating=on
 
