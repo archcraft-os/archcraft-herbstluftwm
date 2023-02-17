@@ -25,17 +25,13 @@ get_backlight() {
 get_icon() {
 	backlight="$(get_backlight)"
 	current="${backlight%%%}"
-	if [[ ("$current" -ge "0") && ("$current" -le "20") ]]; then
-		icon="$iDIR"/brightness-20.png
-	elif [[ ("$current" -ge "20") && ("$current" -le "40") ]]; then
-		icon="$iDIR"/brightness-40.png
-	elif [[ ("$current" -ge "40") && ("$current" -le "60") ]]; then
-		icon="$iDIR"/brightness-60.png
-	elif [[ ("$current" -ge "60") && ("$current" -le "80") ]]; then
-		icon="$iDIR"/brightness-80.png
-	elif [[ ("$current" -ge "80") && ("$current" -le "100") ]]; then
-		icon="$iDIR"/brightness-100.png
-	fi
+	level=( 80 60 40 20 0 )
+	
+	for l in ${level[@]}; do
+		if [ "$current" -ge "$l" ]; then
+			icon="$iDIR/brightness-$l.png"
+		fi
+	done
 }
 
 # Notify 
