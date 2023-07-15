@@ -14,7 +14,7 @@ hc emit_hook reload
 
 ## Autostart -------------------------------------------------#
 
-bash ~/.config/herbstluftwm/bin/autostart.sh
+bash ~/.config/herbstluftwm/scripts/herb_autostart
 
 ## keybindings -----------------------------------------------#
 
@@ -26,10 +26,10 @@ Mod=Mod4   # Use the super key as the main modifier
 Alt=Mod1   # Use alt as another modifier
 
 # terminals
-TERMINAL="$HOME/.config/herbstluftwm/bin/herbterm.sh"
+TERMINAL="$HOME/.config/herbstluftwm/scripts/herb_term"
 hc keybind $Mod-Return spawn "$TERMINAL"
 hc keybind $Mod-Shift-Return spawn "$TERMINAL" --float
-hc keybind $Mod-t spawn "$TERMINAL" --full
+hc keybind $Mod-Alt-Return spawn "$TERMINAL" --full
 
 # applications
 FILE_MANAGER='thunar'
@@ -40,42 +40,45 @@ hc keybind $Mod-Shift-f spawn "$FILE_MANAGER"
 hc keybind $Mod-Shift-w spawn "$WEB_BROWSER"
 
 # rofi menus
-hc keybind $Alt-F1 spawn ~/.config/herbstluftwm/rofi/bin/launcher
-hc keybind $Mod-n spawn ~/.config/herbstluftwm/rofi/bin/network_menu
-hc keybind $Mod-x spawn ~/.config/herbstluftwm/rofi/bin/powermenu
-hc keybind $Mod-m spawn ~/.config/herbstluftwm/rofi/bin/mpd
-hc keybind $Mod-s spawn ~/.config/herbstluftwm/rofi/bin/screenshot
-hc keybind $Mod-r spawn ~/.config/herbstluftwm/rofi/bin/asroot
-hc keybind $Mod-w spawn ~/.config/herbstluftwm/rofi/bin/windows
+hc keybind $Alt-F1 spawn "$HOME"/.config/herbstluftwm/scripts/rofi_launcher
+hc keybind $Alt-F2 spawn "$HOME"/.config/herbstluftwm/scripts/rofi_runner
+hc keybind $Mod-n spawn  "$HOME"/.config/herbstluftwm/scripts/network_menu
+hc keybind $Mod-x spawn  "$HOME"/.config/herbstluftwm/scripts/rofi_powermenu
+hc keybind $Mod-m spawn  "$HOME"/.config/herbstluftwm/scripts/rofi_music
+hc keybind $Mod-s spawn  "$HOME"/.config/herbstluftwm/scripts/rofi_screenshot
+hc keybind $Mod-r spawn  "$HOME"/.config/herbstluftwm/scripts/rofi_asroot
+hc keybind $Mod-w spawn  "$HOME"/.config/herbstluftwm/scripts/rofi_windows
+hc keybind $Mod-b spawn  "$HOME"/.config/herbstluftwm/scripts/rofi_bluetooth
 
 # function keys
-hc keybind XF86MonBrightnessUp 		spawn "$HOME/.config/herbstluftwm/bin/herbbrightness.sh" "--inc"
-hc keybind XF86MonBrightnessDown 	spawn "$HOME/.config/herbstluftwm/bin/herbbrightness.sh" "--dec"
-hc keybind XF86AudioRaiseVolume 	spawn "$HOME/.config/herbstluftwm/bin/herbvolume.sh" "--inc"
-hc keybind XF86AudioLowerVolume 	spawn "$HOME/.config/herbstluftwm/bin/herbvolume.sh" "--dec"
-hc keybind XF86AudioMute 			spawn "$HOME/.config/herbstluftwm/bin/herbvolume.sh" "--toggle"
-hc keybind XF86AudioMicMute 		spawn "$HOME/.config/herbstluftwm/bin/herbvolume.sh" "--toggle-mic"
+hc keybind XF86MonBrightnessUp 		spawn "$HOME/.config/herbstluftwm/scripts/herb_brightness" "--inc"
+hc keybind XF86MonBrightnessDown 	spawn "$HOME/.config/herbstluftwm/scripts/herb_brightness" "--dec"
+hc keybind XF86AudioRaiseVolume 	spawn "$HOME/.config/herbstluftwm/scripts/herb_volume" "--inc"
+hc keybind XF86AudioLowerVolume 	spawn "$HOME/.config/herbstluftwm/scripts/herb_volume" "--dec"
+hc keybind XF86AudioMute 			spawn "$HOME/.config/herbstluftwm/scripts/herb_volume" "--toggle"
+hc keybind XF86AudioMicMute 		spawn "$HOME/.config/herbstluftwm/scripts/herb_volume" "--toggle-mic"
 hc keybind XF86AudioNext 			spawn "mpc next"
 hc keybind XF86AudioPrev 			spawn "mpc prev"
 hc keybind XF86AudioPlay 			spawn "mpc toggle"
 hc keybind XF86AudioStop 			spawn "mpc stop"
 
 # screenshots
-hc keybind Print 					spawn "$HOME/.config/herbstluftwm/bin/herbscreenshot.sh" "--now"
-hc keybind $Alt-Print 				spawn "$HOME/.config/herbstluftwm/bin/herbscreenshot.sh" "--in5"
-hc keybind Shift-Print 				spawn "$HOME/.config/herbstluftwm/bin/herbscreenshot.sh" "--in10"
-hc keybind Control-Print 			spawn "$HOME/.config/herbstluftwm/bin/herbscreenshot.sh" "--win"
-hc keybind $Mod-Print 				spawn "$HOME/.config/herbstluftwm/bin/herbscreenshot.sh" "--area"
+hc keybind Print 					spawn "$HOME/.config/herbstluftwm/scripts/herb_screenshot" "--now"
+hc keybind $Alt-Print 				spawn "$HOME/.config/herbstluftwm/scripts/herb_screenshot" "--in5"
+hc keybind Shift-Print 				spawn "$HOME/.config/herbstluftwm/scripts/herb_screenshot" "--in10"
+hc keybind Control-Print 			spawn "$HOME/.config/herbstluftwm/scripts/herb_screenshot" "--win"
+hc keybind $Mod-Print 				spawn "$HOME/.config/herbstluftwm/scripts/herb_screenshot" "--area"
 
 # misc
-hc keybind $Mod-p 					spawn "$HOME/.config/herbstluftwm/bin/herbcolorpicker.sh"
+hc keybind $Mod-p 					spawn "$HOME/.config/herbstluftwm/scripts/herb_colorpicker"
+hc keybind Control-$Alt-m 			spawn "$HOME/.config/herbstluftwm/scripts/herb_music"
+hc keybind Control-$Alt-l 			spawn "betterlockscreen" "--lock"
+hc keybind $Mod-Escape 				spawn xkill
 
 # window manager
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-c close
-hc keybind Control-$Alt-l 			spawn "betterlockscreen" "--lock"
-hc keybind Control-$Alt-Escape 		spawn xkill
 
 # focusing clients, basic movement in tiling and floating mode
 hc keybind $Mod-Left  focus left
@@ -119,7 +122,7 @@ hc keybind $Mod-d remove
 hc keybind $Mod-BackSpace   cycle_monitor
 hc keybind $Mod-Tab         cycle_all +1
 hc keybind $Mod-Shift-Tab   cycle_all -1
-hc keybind $Mod-b cycle
+hc keybind $Alt-Tab cycle
 hc keybind $Mod-i jumpto urgent
 
 ## Mouse -----------------------------------------------------#
