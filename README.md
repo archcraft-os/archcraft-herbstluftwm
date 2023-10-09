@@ -1,2 +1,2 @@
 # archcraft-herbstluftwm
- // Configuration : herbstluftwm
+ // Configuration : Herbstluftwm

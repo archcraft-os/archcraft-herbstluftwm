@@ -34,8 +34,8 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 xsetroot -cursor_name left_ptr
 
 # Restore wallpaper
-#hsetroot -root -cover "$hdir"/theme/wallpaper
-hsetroot -root -solid "#BDBAB5"
+#hsetroot -cover "$hdir"/theme/wallpaper
+hsetroot -solid "#BDBAB5"
 
 # Lauch notification daemon
 "$hdir"/scripts/herb_dunst
