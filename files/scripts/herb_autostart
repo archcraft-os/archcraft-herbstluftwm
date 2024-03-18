@@ -7,6 +7,9 @@
 # herbstluftwm dir
 hdir="$HOME/.config/herbstluftwm"
 
+# Export desktop session
+export XDG_CURRENT_DESKTOP='herbstluftwm'
+
 # Kill already running process
 _ps=(xsettingsd ksuperkey)
 for _prs in "${_ps[@]}"; do
