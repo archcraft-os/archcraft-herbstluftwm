@@ -2,7 +2,7 @@
 
 pkgname=archcraft-herbstluftwm
 pkgver=4.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Herbstluftwm Configurations for Archcraft"
 arch=('any')
 url="https://github.com/archcraft-os/archcraft-herbstluftwm"
