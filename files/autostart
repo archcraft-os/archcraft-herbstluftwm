@@ -25,11 +25,15 @@ hc keyunbind --all
 Mod=Mod4   # Use the super key as the main modifier
 Alt=Mod1   # Use alt as another modifier
 
-# terminals
+# terminal : alacritty
 TERMINAL="$HOME/.config/herbstluftwm/scripts/herb_term"
 hc keybind $Mod-Return spawn "$TERMINAL"
 hc keybind $Mod-Shift-Return spawn "$TERMINAL" --float
 hc keybind $Mod-Alt-Return spawn "$TERMINAL" --full
+
+# terminal : kitty
+TERM_KITTY="$HOME/.config/herbstluftwm/scripts/herb_kitty"
+hc keybind $Alt-Control-t spawn "$TERM_KITTY"
 
 # applications
 FILE_MANAGER='thunar'
@@ -180,7 +184,7 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 
-hc rule class~'(alacritty-float)' focus=on floating=on
+hc rule class~'(alacritty-float|kitty-float)' focus=on floating=on
 hc rule class~'(Pcmanfm|Onboard|Yad)' focus=on floating=on
 hc rule class~'(Lxappearance|Nitrogen)' focus=on floating=on
 hc rule class~'(Pavucontrol|Xfce4-power-manager-settings|Nm-connection-editor)' focus=on floating=on
